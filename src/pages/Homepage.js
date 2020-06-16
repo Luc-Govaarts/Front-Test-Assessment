@@ -4,7 +4,7 @@ import { selectFeedPages, selectPagesLoading } from '../store/feed/selectors'
 import { fetchHomepages } from '../store/feed/actions'
 import PageCard from '../components/PageCard'
 
-export default function Homepage() {
+export default function HomePage() {
     const dispatch = useDispatch()
     const pages = useSelector(selectFeedPages)
     const loading = useSelector(selectPagesLoading)   
@@ -17,6 +17,7 @@ export default function Homepage() {
                 {pages.map(page => {
                     return  <div key={page.id}>   
                                 <PageCard 
+                                    id = {page.id}
                                     title={page.title}
                                     description={page.description}
                                     backgroundColor={page.backgroundColor}
