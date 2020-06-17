@@ -18,6 +18,5 @@ export async function fetchHomepages(dispatch, getState) {
     dispatch(startLoading(true)) 
     const res = await axios.get(`${API_URL}/homepage`);
     const homepages = res.data
-    console.log("HOMEPAGES", homepages)
     dispatch(storeHomepages(homepages))
 }

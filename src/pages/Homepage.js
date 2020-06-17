@@ -1,13 +1,12 @@
 import React, {useEffect} from 'react'
 import {useSelector, useDispatch} from "react-redux";
-import { selectFeedPages, selectPagesLoading } from '../store/feed/selectors'
+import { selectFeedPages } from '../store/feed/selectors'
 import { fetchHomepages } from '../store/feed/actions'
 import PageCard from '../components/PageCard'
 
 export default function HomePage() {
     const dispatch = useDispatch()
     const pages = useSelector(selectFeedPages)
-    const loading = useSelector(selectPagesLoading)   
 
     useEffect(() => {
         dispatch(fetchHomepages);
